@@ -1,0 +1,182 @@
+{
+  "semester1-lessons": {
+    "name": "Уроки — Верстка (Семестр 1)",
+    "items": [
+      {
+        "name": "Урок 1 — Введение в HTML",
+        "file": "lesson_1.md",
+        "path": "assets/semester-1/lessons/lesson_1.md"
+      },
+      {
+        "name": "Урок 2 — Заголовки",
+        "file": "lesson_2.md",
+        "path": "assets/semester-1/lessons/lesson_2.md"
+      },
+      {
+        "name": "Урок 3 — Семантическая верстка",
+        "file": "lesson_3.md",
+        "path": "assets/semester-1/lessons/lesson_3.md"
+      },
+      {
+        "name": "Урок 4 — Мультимедиа и ссылки",
+        "file": "lesson_4.md",
+        "path": "assets/semester-1/lessons/lesson_4.md"
+      },
+      {
+        "name": "Урок 5 — Введение в CSS",
+        "file": "lesson_5.md",
+        "path": "assets/semester-1/lessons/lesson_5.md"
+      },
+      {
+        "name": "Урок 6 — Типография",
+        "file": "lesson_6.md",
+        "path": "assets/semester-1/lessons/lesson_6.md"
+      },
+      {
+        "name": "Урок 7 — Блоковая модель",
+        "file": "lesson_7.md",
+        "path": "assets/semester-1/lessons/lesson_7.md"
+      },
+      {
+        "name": "Урок 8 — Позиционирование",
+        "file": "lesson_8.md",
+        "path": "assets/semester-1/lessons/lesson_8.md"
+      },
+      {
+        "name": "Урок 9 — Flexbox",
+        "file": "lesson_9.md",
+        "path": "assets/semester-1/lessons/lesson_9.md"
+      },
+      {
+        "name": "Урок 10 — Grid",
+        "file": "lesson_10.md",
+        "path": "assets/semester-1/lessons/lesson_10.md"
+      },
+      {
+        "name": "Урок 11 — Адаптивность",
+        "file": "lesson_11.md",
+        "path": "assets/semester-1/lessons/lesson_11.md"
+      },
+      {
+        "name": "Урок 12 — Формы",
+        "file": "lesson_12.md",
+        "path": "assets/semester-1/lessons/lesson_12.md"
+      },
+      {
+        "name": "Урок 13 — Трансформации и переходы",
+        "file": "lesson_13.md",
+        "path": "assets/semester-1/lessons/lesson_13.md"
+      },
+      {
+        "name": "Урок 14 — Git",
+        "file": "lesson_14.md",
+        "path": "assets/semester-1/lessons/lesson_14.md"
+      }
+    ]
+  },
+  "semester1-assignments": {
+    "name": "Задания — Верстка (Семестр 1)",
+    "items": [
+      {
+        "name": "Задание 1 — Сайт-визитка",
+        "file": "assignment_1.md",
+        "path": "assets/semester-1/assignments/assignment_1.md"
+      },
+      {
+        "name": "Задание 2 — Сайт для малого бизнеса",
+        "file": "assignment_2.md",
+        "path": "assets/semester-1/assignments/assignment_2.md"
+      },
+      {
+        "name": "Задание 3 — Лендинг по референсу",
+        "file": "assignment_3.md",
+        "path": "assets/semester-1/assignments/assignment_3.md"
+      }
+    ]
+  },
+  "semester1-exam": {
+    "name": "Экзамен — Верстка (Семестр 1)",
+    "items": [
+      {
+        "name": "Экзаменационные билеты",
+        "file": "tickets.md",
+        "path": "assets/semester-1/exam/tickets.md"
+      }
+    ]
+  },
+  "semester2-lessons": {
+    "name": "Уроки — JavaScript (Семестр 2)",
+    "items": [
+      {
+        "name": "Урок 1 — Основы JavaScript",
+        "file": "lesson_1.md",
+        "path": "assets/semester-2/lessons/lesson_1.md"
+      },
+      {
+        "name": "Урок 2 — Функции",
+        "file": "lesson_2.md",
+        "path": "assets/semester-2/lessons/lesson_2.md"
+      },
+      {
+        "name": "Урок 3 — DOM",
+        "file": "lesson_3.md",
+        "path": "assets/semester-2/lessons/lesson_3.md"
+      },
+      {
+        "name": "Урок 4 — ООП",
+        "file": "lesson_4.md",
+        "path": "assets/semester-2/lessons/lesson_4.md"
+      },
+      {
+        "name": "Урок 5 — Модули",
+        "file": "lesson_5.md",
+        "path": "assets/semester-2/lessons/lesson_5.md"
+      },
+      {
+        "name": "Урок 6 — JSON, API и асинхронность",
+        "file": "lesson_6.md",
+        "path": "assets/semester-2/lessons/lesson_6.md"
+      },
+      {
+        "name": "Урок 7 — Формы и хранилища",
+        "file": "lesson_7.md",
+        "path": "assets/semester-2/lessons/lesson_7.md"
+      }
+    ]
+  },
+  "semester2-assignments": {
+    "name": "Задания — JavaScript (Семестр 2)",
+    "items": [
+      {
+        "name": "Задание 1 — Портфолио-резюме",
+        "file": "assignment_1.md",
+        "path": "assets/semester-2/assignments/assignment_1.md"
+      },
+      {
+        "name": "Задание 2 — Дашборд с виджетами",
+        "file": "assignment_2.md",
+        "path": "assets/semester-2/assignments/assignment_2.md"
+      },
+      {
+        "name": "Задание 3 — Игра-платформер",
+        "file": "assignment_3.md",
+        "path": "assets/semester-2/assignments/assignment_3.md"
+      }
+    ]
+  },
+  "semester2-exam": {
+    "name": "Экзамен — JavaScript (Семестр 2)",
+    "items": [
+      {
+        "name": "Экзаменационные билеты",
+        "file": "tickets.md",
+        "path": "assets/semester-2/exam/tickets.md"
+      },
+      {
+        "name": "Финальный проект",
+        "file": "final_project.md",
+        "path": "assets/semester-2/exam/final_project.md"
+      }
+    ]
+  }
+}

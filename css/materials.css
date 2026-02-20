@@ -1,0 +1,525 @@
+/* Mobile First — iOS-style app */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f2f2f7;
+  --bg-tertiary: #ffffff;
+  --bg-grouped: #f2f2f7;
+  --text-primary: #000000;
+  --text-secondary: #3c3c43;
+  --text-tertiary: #8e8e93;
+  --separator: rgba(60, 60, 67, 0.12);
+  --accent: #007aff;
+  --accent-hover: #0051d5;
+  --cell-bg: #ffffff;
+  --radius: 12px;
+  --radius-sm: 10px;
+  --touch-min: 44px;
+  --safe-top: env(safe-area-inset-top, 0);
+  --safe-bottom: env(safe-area-inset-bottom, 0);
+  --safe-left: env(safe-area-inset-left, 0);
+  --safe-right: env(safe-area-inset-right, 0);
+}
+
+[data-theme="dark"] {
+  --bg-primary: #000000;
+  --bg-secondary: #1c1c1e;
+  --bg-tertiary: #2c2c2e;
+  --bg-grouped: #000000;
+  --text-primary: #ffffff;
+  --text-secondary: #ebebf5;
+  --text-tertiary: #8e8e93;
+  --separator: rgba(84, 84, 88, 0.65);
+  --accent: #0a84ff;
+  --accent-hover: #409cff;
+  --cell-bg: #1c1c1e;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'SF Pro Display', 'Helvetica Neue', sans-serif;
+  font-size: 17px;
+  line-height: 1.47;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--safe-top) var(--safe-left) var(--safe-bottom) var(--safe-right);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 100%;
+  min-height: 100vh;
+  padding: 0;
+}
+
+/* Header — iOS Navigation Bar style */
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px 12px 16px;
+  padding-left: calc(16px + var(--safe-left));
+  padding-right: calc(16px + var(--safe-right));
+  background: var(--bg-primary);
+  border-bottom: 0.5px solid var(--separator);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+}
+
+.header h1 {
+  flex: 1;
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: 1.3;
+  letter-spacing: -0.4px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.theme-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+/* Theme toggle — iOS switch style */
+.theme-toggle {
+  width: 51px;
+  height: 31px;
+  flex-shrink: 0;
+  border-radius: 16px;
+  background: #e9e9eb;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] .theme-toggle {
+  background: #34c759;
+}
+
+.theme-toggle::before {
+  content: '';
+  position: absolute;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: white;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="dark"] .theme-toggle::before {
+  transform: translateX(20px);
+}
+
+/* Main content — iOS grouped list style */
+.main-content {
+  padding: 16px;
+  padding-left: calc(16px + var(--safe-left));
+  padding-right: calc(16px + var(--safe-right));
+  padding-bottom: calc(24px + var(--safe-bottom));
+}
+
+.screen {
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.screen h2 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 20px;
+  padding: 0 4px;
+}
+
+.semester-screen-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.semester-screen-header h2 {
+  margin-bottom: 0;
+}
+
+.share-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--cell-bg);
+  border: 0.5px solid var(--separator);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.15s;
+}
+
+.share-btn:active {
+  opacity: 0.7;
+}
+
+.share-icon {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+.practicum-download {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 0.5px solid var(--separator);
+}
+
+.practicum-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 20px;
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  background: var(--accent);
+  border-radius: var(--radius);
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.15s;
+}
+
+.practicum-link:active {
+  opacity: 0.85;
+}
+
+.screen-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.screen-header h2 {
+  flex: 1;
+  margin-bottom: 0;
+  font-size: 20px;
+  color: var(--text-primary);
+}
+
+.screen-subtitle {
+  font-size: 15px;
+  color: var(--text-tertiary);
+  margin-bottom: 12px;
+  padding: 0 4px;
+}
+
+/* Rutube link — iOS cell style */
+.rutube-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  background: var(--cell-bg);
+  border-radius: var(--radius);
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  min-height: var(--touch-min);
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.2s;
+  border: 0.5px solid var(--separator);
+}
+
+.rutube-link:active {
+  opacity: 0.7;
+}
+
+.rutube-icon {
+  font-size: 14px;
+  opacity: 0.9;
+}
+
+/* Category buttons — iOS list rows */
+.category-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.category-btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  min-height: var(--touch-min);
+  padding: 14px 18px;
+  font-size: 17px;
+  font-weight: 500;
+  color: var(--accent);
+  background: var(--cell-bg);
+  border: 0.5px solid var(--separator);
+  border-radius: var(--radius);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.15s, opacity 0.15s;
+  text-align: left;
+}
+
+.category-btn:active {
+  opacity: 0.7;
+  background: var(--bg-secondary);
+}
+
+/* Back button */
+.back-btn {
+  min-height: var(--touch-min);
+  padding: 8px 16px;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--accent);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: opacity 0.15s;
+}
+
+.back-btn:active {
+  opacity: 0.6;
+}
+
+/* File list — iOS grouped table style */
+.file-items {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: var(--cell-bg);
+  border-radius: var(--radius);
+  overflow: hidden;
+  border: 0.5px solid var(--separator);
+}
+
+.file-item-btn {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: var(--touch-min);
+  padding: 14px 18px;
+  font-size: 17px;
+  font-weight: 400;
+  color: var(--text-primary);
+  background: transparent;
+  border: none;
+  border-bottom: 0.5px solid var(--separator);
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 0.15s;
+  text-align: left;
+}
+
+.file-item-btn:last-child {
+  border-bottom: none;
+}
+
+.file-item-btn:active {
+  background: var(--bg-secondary);
+}
+
+.empty-message {
+  padding: 24px 18px;
+  font-size: 15px;
+  color: var(--text-tertiary);
+  text-align: center;
+}
+
+.empty-message code {
+  background: var(--bg-secondary);
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Content viewer */
+.content-body {
+  padding: 16px 0 32px;
+  color: var(--text-primary);
+}
+
+.markdown-body {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+  background-color: transparent !important;
+}
+
+.markdown-body pre {
+  border-radius: var(--radius-sm);
+  padding: 16px;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  background: var(--bg-secondary);
+  border-left: 4px solid var(--accent);
+  margin: 16px 0;
+}
+
+.markdown-body code {
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.markdown-body a {
+  color: var(--accent);
+}
+
+/* Dark theme — переопределение github-markdown */
+[data-theme="dark"] .markdown-body {
+  color: var(--text-primary) !important;
+  background-color: transparent !important;
+}
+
+[data-theme="dark"] .markdown-body h1,
+[data-theme="dark"] .markdown-body h2,
+[data-theme="dark"] .markdown-body h3,
+[data-theme="dark"] .markdown-body h4,
+[data-theme="dark"] .markdown-body h5,
+[data-theme="dark"] .markdown-body h6 {
+  color: var(--text-primary) !important;
+  border-color: var(--separator) !important;
+}
+
+[data-theme="dark"] .markdown-body p,
+[data-theme="dark"] .markdown-body li,
+[data-theme="dark"] .markdown-body td,
+[data-theme="dark"] .markdown-body th {
+  color: var(--text-primary) !important;
+}
+
+[data-theme="dark"] .markdown-body pre,
+[data-theme="dark"] .markdown-body code {
+  background: var(--bg-secondary) !important;
+  color: var(--text-primary) !important;
+  border-color: var(--separator) !important;
+}
+
+[data-theme="dark"] .markdown-body blockquote {
+  color: var(--text-secondary) !important;
+  border-color: var(--separator) !important;
+  background: var(--bg-secondary) !important;
+}
+
+[data-theme="dark"] .markdown-body table th,
+[data-theme="dark"] .markdown-body table td {
+  border-color: var(--separator) !important;
+}
+
+[data-theme="dark"] .markdown-body hr {
+  border-color: var(--separator) !important;
+}
+
+[data-theme="dark"] .markdown-body strong {
+  color: var(--text-primary) !important;
+}
+
+.error {
+  padding: 16px;
+  color: #ff3b30;
+  background: rgba(255, 59, 48, 0.1);
+  border-radius: var(--radius-sm);
+  font-size: 15px;
+}
+
+/* Desktop — min-width 768px */
+@media (min-width: 768px) {
+  body {
+    font-size: 17px;
+  }
+
+  .container {
+    max-width: 680px;
+    margin: 0 auto;
+  }
+
+  .header {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 16px 24px;
+  }
+
+  .header h1 {
+    font-size: 22px;
+  }
+
+  .main-content {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 24px;
+  }
+
+  .category-btn:hover {
+    background: var(--bg-secondary);
+  }
+
+  .category-btn:active {
+    background: var(--bg-secondary);
+  }
+
+  .file-item-btn:hover {
+    background: var(--bg-secondary);
+  }
+
+  .rutube-link:hover {
+    opacity: 0.9;
+  }
+
+  .share-btn:hover {
+    opacity: 0.9;
+  }
+
+  .practicum-link:hover {
+    opacity: 0.9;
+  }
+}

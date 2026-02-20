@@ -3,67 +3,81 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сетка товаров</title>
-    <link rel="stylesheet" href="css/style.css">
+    <title>Учебные материалы — 3-МД-21</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/5.2.0/github-markdown.min.css">
+    <link rel="stylesheet" href="css/materials.css">
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function(m,e,t,r,i,k,a){
+            m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+            m[i].l=1*new Date();
+            for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+            k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+        })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=106929670', 'ym');
+
+        ym(106929670, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/106929670" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter -->
 </head>
 <body>
-    <div class="products-grid">
-        <!-- Карточка товара 1 -->
-        <div class="product-card">
-            <img src="https://png.pngtree.com/png-vector/20241123/ourmid/pngtree-adorable-golden-cat-clipart-standing-illustration-png-image_14489824.png" alt="Товар 1" class="product-image">
-            <h3 class="product-title">Название товара 1</h3>
-            <p class="product-description">Краткое описание товара. Характеристики и основные преимущества.</p>
-            <div class="product-price">1 499 ₽</div>
-            <button class="add-to-cart">В корзину</button>
-        </div>
+    <div class="container">
+        <header class="header">
+            <h1>Учебные материалы по дисциплине «Современные технологии разработки»</h1>
+            <nav class="nav-links">
+                <span class="theme-label" id="themeLabel">☀️ Светлая</span>
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему"></button>
+            </nav>
+        </header>
 
-        <!-- Карточка товара 2 -->
-        <div class="product-card">
-            <img src="https://via.placeholder.com/300x200" alt="Товар 2" class="product-image">
-            <h3 class="product-title">Название товара 2</h3>
-            <p class="product-description">Краткое описание товара. Характеристики и основные преимущества.</p>
-            <div class="product-price">2 299 ₽</div>
-            <button class="add-to-cart">В корзину</button>
-        </div>
+        <main class="main-content">
+            <!-- Уровень 1: Выбор семестра -->
+            <section class="screen" id="semesterScreen">
+                <div class="semester-screen-header">
+                    <h2>Выберите семестр</h2>
+                    <button class="share-btn" id="shareBtn" aria-label="Поделиться">
+                        <span class="share-icon">⎘</span> Поделиться
+                    </button>
+                </div>
+                <div class="category-buttons" id="semesterButtons"></div>
+            </section>
 
-        <!-- Карточка товара 3 -->
-        <div class="product-card">
-            <img src="https://via.placeholder.com/300x200" alt="Товар 3" class="product-image">
-            <h3 class="product-title">Название товара 3</h3>
-            <p class="product-description">Краткое описание товара. Характеристики и основные преимущества.</p>
-            <div class="product-price">3 999 ₽</div>
-            <button class="add-to-cart">В корзину</button>
-        </div>
+            <!-- Уровень 2: Выбор раздела (Уроки / Задания / Экзамен) -->
+            <section class="screen" id="sectionScreen" style="display: none;">
+                <div class="screen-header">
+                    <button class="back-btn" id="backToSemestersBtn">← Назад</button>
+                    <h2 id="sectionScreenTitle"></h2>
+                </div>
+                <a href="#" class="rutube-link" id="rutubeLink" target="_blank" rel="noopener">
+                    <span class="rutube-icon">▶</span>
+                    Видеолекции на RUTUBE
+                </a>
+                <p class="screen-subtitle">Выберите раздел:</p>
+                <div class="category-buttons" id="sectionButtons"></div>
+            </section>
 
-        <!-- Карточка товара 4 -->
-        <div class="product-card">
-            <img src="https://via.placeholder.com/300x200" alt="Товар 4" class="product-image">
-            <h3 class="product-title">Название товара 4</h3>
-            <p class="product-description">Краткое описание товара. Характеристики и основные преимущества.</p>
-            <div class="product-price">899 ₽</div>
-            <button class="add-to-cart">В корзину</button>
-        </div>
+            <!-- Уровень 3: Список файлов -->
+            <section class="screen" id="fileListScreen" style="display: none;">
+                <div class="screen-header">
+                    <button class="back-btn" id="backToSectionsBtn">← Назад</button>
+                    <h2 id="fileListTitle"></h2>
+                </div>
+                <ul class="file-items" id="fileItems"></ul>
+                <div class="practicum-download" id="practicumDownload" style="display: none;"></div>
+            </section>
 
-        <!-- Карточка товара 5 -->
-        <div class="product-card">
-            <img src="https://via.placeholder.com/300x200" alt="Товар 5" class="product-image">
-            <h3 class="product-title">Название товара 5</h3>
-            <p class="product-description">Краткое описание товара. Характеристики и основные преимущества.</p>
-            <div class="product-price">5 499 ₽</div>
-            <button class="add-to-cart">В корзину</button>
-        </div>
-
-        <!-- Карточка товара 6 -->
-        <div class="product-card">
-            <img src="https://via.placeholder.com/300x200" alt="Товар 6" class="product-image">
-            <h3 class="product-title">Название товара 6</h3>
-            <p class="product-description">Краткое описание товара. Характеристики и основные преимущества.</p>
-            <div class="product-price">1 799 ₽</div>
-            <button class="add-to-cart">В корзину</button>
-        </div>
+            <!-- Уровень 4: Просмотр содержимого -->
+            <section class="screen" id="contentScreen" style="display: none;">
+                <div class="screen-header">
+                    <button class="back-btn" id="backToFilesBtn">← Назад к списку</button>
+                    <h2 id="contentTitle"></h2>
+                </div>
+                <div class="content-body markdown-body" id="contentBody"></div>
+            </section>
+        </main>
     </div>
-    <script>
-        console.error("Привет ребята!")
-    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/marked@11.1.1/marked.min.js"></script>
+    <script type="module" src="js/main.js"></script>
 </body>
 </html>
